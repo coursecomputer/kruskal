@@ -1,7 +1,8 @@
-from .methods.kruskal import Kruskal
+from .methods.kruskal_with_list import KruskalList
+from .methods.kruskal_with_tree import KruskalTree
 
 
-class Graph(Kruskal):
+class Graph(KruskalList, KruskalTree):
 
     def __init__(self, data=None):
         super().__init__()
