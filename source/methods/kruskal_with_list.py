@@ -1,5 +1,5 @@
 
-class Kruskal:
+class KruskalList:
 
     def find(self, visited, v1, v2):
         for union in visited:
@@ -32,7 +32,7 @@ class Kruskal:
     def isCycle(self, visited, v1, v2):
         return self.find(visited, v1, v2)
 
-    def kruskal(self):
+    def kruskalList(self):
         edges = self.edges()
         visited = list()
         mst = list()
