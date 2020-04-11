@@ -1,8 +1,7 @@
-from .methods.kruskal_with_list import KruskalList
-from .methods.kruskal_with_tree import KruskalTree
+from .methods.kruskal import Kruskal
 
 
-class Graph(KruskalList, KruskalTree):
+class Graph(Kruskal):
 
     def __init__(self, data=None):
         super().__init__()
@@ -47,6 +46,9 @@ class Graph(KruskalList, KruskalTree):
         for func in dir(self):
             if func[0] != "_" and callable(getattr(self, func)):
                 print(func)
+
+    def number_of_nodes(self):
+        return len(self.graph)
 
     def insert(self, value, children):
         self.graph[value] = children
