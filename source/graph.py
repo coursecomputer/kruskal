@@ -28,6 +28,9 @@ class Graph(Kruskal):
         return self.graph.keys()
 
     def edges(self):
+        #
+        # faire un yield
+        #
         edges = list()
 
         for node in self.graph:
