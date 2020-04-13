@@ -27,6 +27,7 @@ class TestKruskal(unittest.TestCase):
         edges = graph.kruskal()
 
         # checks tree returned by kruskal method
+        self.assertEqual(len(edges), 6)
         self.assertEqual(edges, [
             ("A", "D", 5), ("C", "E", 5), ("D", "F", 6), ("A", "B", 7), ("B", "E", 7), ("E", "G", 9)])
 
@@ -48,10 +49,11 @@ class TestKruskal(unittest.TestCase):
         edges = graph.kruskal()
 
         # checks tree returned by kruskal method
+        self.assertEqual(len(edges), 4)
         self.assertEqual(edges, [
             ("2", "ABC", 1), ("grh", "ABC", 1), ("&^%", "ABC", 2), ("grh", "5748", 2)])
 
-    def test_load(self):
+    def test_load_with_1000000_edegs_1000_nodes(self):
         # defines random function
         def randomStringDigits(stringLength=6):
             lettersAndDigits = string.ascii_letters + string.digits
@@ -60,7 +62,7 @@ class TestKruskal(unittest.TestCase):
         data_graph = dict()
 
         # graph creation with nodes
-        for string_len in range(5, 10):
+        for string_len in range(5, 11):
             for variant in range(1, 200):
                 data_graph[randomStringDigits(string_len)] = dict()
 
@@ -76,8 +78,7 @@ class TestKruskal(unittest.TestCase):
         # execution kruskal method
         edges = graph.kruskal()
 
-        print("Edges: ", len(data_graph) * len(data_graph))
-        print("Result edges: ", len(edges))
+        self.assertEqual(len(edges), graph.number_of_nodes() - 1)
 
 
 if __name__ == "__main__":
