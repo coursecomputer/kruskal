@@ -24,13 +24,7 @@ class Graph(Kruskal):
         else:
             self.graph = dict()
 
-    def nodes(self):
-        return self.graph.keys()
-
     def edges(self):
-        #
-        # faire un yield
-        #
         edges = list()
 
         for node in self.graph:
@@ -39,23 +33,5 @@ class Graph(Kruskal):
 
         return edges
 
-    def display(self):
-        for node in self.graph:
-            print("Node: %s" % node)
-            for neighbourNode in self.graph[node]:
-                print("\tNeighbour node: %s, weight: %d" % (neighbourNode, self.graph[node][neighbourNode]))
-
-    def display_methods(self):
-        for func in dir(self):
-            if func[0] != "_" and callable(getattr(self, func)):
-                print(func)
-
     def number_of_nodes(self):
         return len(self.graph)
-
-    def insert(self, value, children):
-        self.graph[value] = children
-
-    def delete(self):
-        del self.graph
-        self.graph = dict()
