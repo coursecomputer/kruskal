@@ -390,7 +390,7 @@ sinon
 
 
 
-Cette exemple montre l'optimisation.
+Cet exemple montre la méthode optimiser et la méthode non-optimiser.
 
 <p align="left">
     <img src="./assets/rank2.png" width="1000" alt="">

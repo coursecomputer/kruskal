@@ -24,9 +24,9 @@ git clone https://github.com/coursecomputer/kruskal.git
 from source.graph import Graph
 
 graph = Graph({
-  "A": { "B": 3, "C": 6 }
-  "B": { "A": 3, "C": 8 }
-  "C": { "A": 6, "B": 8 }
+  "A": { "B": 3, "C": 6 },
+  "B": { "A": 3, "C": 8 },
+  "C": { "A": 6, "B": 8 },
 })
 
 graph.kruskal()
