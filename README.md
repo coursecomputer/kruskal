@@ -17,22 +17,30 @@ Before starting, please make sure you have installed:
 ```bash
 # Download the repository
 git clone https://github.com/coursecomputer/kruskal.git
-
-...
 ```
 
 ## **Usage**
-```bash
-python3 ./main.py
+```python
+from source.graph import Graph
 
-...
+graph = Graph({
+  "A": { "B": 3, "C": 6 }
+	"B": { "A": 3, "C": 8 }
+  "C": { "A": 6, "B": 8 }
+})
+
+graph.kruskal()
+# [
+#   ("A", "B", 3),
+#   ("A", "C", 6),
+# ]
 ```
 
 ## **Explication**
-* [English](documentation/en-explication.md)
-* [Français](documentation/fr-explication.md)
+* [English](./documentation/EN-EXPLICATION.md)
+* [Français](./documentation/FR-EXPLICATION.md)
 
 ## **Links**
 * https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
-* https://en.wikipedia.org/wiki/Disjoint-set_data_structure#MakeSet
+* https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 * https://www.youtube.com/watch?v=wU6udHRIkcc&feature=youtu.be (Abdul Bari - 1.12 Disjoint Sets Data Structure - Weighted Union and Collapsing Find)
