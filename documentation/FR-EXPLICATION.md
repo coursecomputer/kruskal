@@ -395,7 +395,3 @@ Cette exemple montre l'optimisation.
 <p align="left">
     <img src="./assets/rank2.png" width="1000" alt="">
 </p>
-
-## Plus d'information
-
-Vous pouvez accéder au [slide de présentation](./assets/slide/index.html) (utiliser les flèches pour défiler)
