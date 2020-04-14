@@ -1,31 +1,52 @@
 
 class Kruskal:
 
-    def findset(self, relation, graph, node):
+    def find(self, relation, graph, node):
+        """Find the parent of node passed in parameter
+
+        Parameters
+        ----------
+        relation : dict
+            Represents the link between the node name and the cycle graph index
+        graph : list
+            Represents the cycle graph
+        node : str
+            Name of node
+
+        Returns
+        -------
+        int
+            The index of parent
+        None
+            Whether the node isn't in the dictionary
+        """
+
         if node not in relation:
             return None
 
-        # keeps the first node
+        # keeps the first node for the path compression
         start = relation[node]
-        # values that represent the parent / ex: 4 so parent 4 index or -3 so no parent
-        parent = graph[start]
-        # keeps the index / ex: 1 => 5 => -4 , index 5
+        # keeps the index for return it
         index = start
+        # value which represents either the next index then it will be stored in the variable "index"
+        # or a negative number which means that it has no parent
+        parent = graph[start]
 
-        # simple implementation, the recursive break with lot of level
+        # continue until "parent" variable whether negative
         while parent >= 0:
             index = parent
             parent = graph[parent]
 
         # path compression
-        if graph[start] != graph[index]:
+        # if the index of the start node is different from the parent node to avoid overwriting the rank then we set it
+        if start != index:
             graph[start] = index
 
         return index
 
     def union(self, relation, graph, src, dst):
-        node_src = self.findset(relation, graph, src)
-        node_dst = self.findset(relation, graph, dst)
+        node_src = self.find(relation, graph, src)
+        node_dst = self.find(relation, graph, dst)
 
         if node_src is None:
             node_src = len(relation)
@@ -44,8 +65,8 @@ class Kruskal:
             graph[node_dst] = node_src
 
     def isCycle(self, relation, graph, src, dst):
-        node_src = self.findset(relation, graph, src)
-        node_dst = self.findset(relation, graph, dst)
+        node_src = self.find(relation, graph, src)
+        node_dst = self.find(relation, graph, dst)
 
         return node_src is not None and node_dst is not None and node_src == node_dst
 
@@ -54,7 +75,7 @@ class Kruskal:
         edges = self.edges()
         # retrieves the numbers of nodes
         numOfNodes = self.number_of_nodes()
-        # dictionary that storage data linked to node / ex: "A": { rank: 0, data: "A", parent: "G" }
+        # dictionary that storage data node to index graph / ex: { "A": 0, "B": 1 }
         relation = dict()
         # final list that storage the edges of minimal spanning tree
         mst = list()
@@ -62,7 +83,7 @@ class Kruskal:
         # graph initialization
         graph = [-1 for i in range(numOfNodes + 1)]
 
-        # We sort the edges in order of weights
+        # sort the edges in order of weights
         edges.sort(key=lambda tup: tup[2])
 
         for edge in edges:
