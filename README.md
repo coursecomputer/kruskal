@@ -1,7 +1,7 @@
 # **Kruskal**
 [EN] Implementation of Kruskal's algorithm
 
-[FR] Implementation de l'algorithme de Kruskal
+[FR] Implémentation de l'algorithme de Kruskal
 
 ## **Summary**
 - [Pre-requisites](#pre-requisites)
