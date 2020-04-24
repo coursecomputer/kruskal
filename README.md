@@ -3,6 +3,10 @@
 
 [FR] Implementation de l'algorithme de Kruskal
 
+## **Explanation**
+* [English](./documentation/explanation.en.md)
+* [Français](./documentation/explanation.fr.md)
+
 ## **Summary**
 - [Pre-requisites](#pre-requisites)
 - [Installation](#installation)
@@ -35,10 +39,6 @@ graph.kruskal()
 #   ("A", "C", 6),
 # ]
 ```
-
-## **Explication**
-* [English](./documentation/EN-EXPLICATION.md)
-* [Français](./documentation/FR-EXPLICATION.md)
 
 ## **Links**
 * https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
