@@ -11,7 +11,7 @@ class Kruskal:
             node (str): Name of node
 
         Returns:
-            int: The index of parent
+            int: The parent index of the set containing a negative value.
         """
 
         # if the node does not exist in the "relationship" dictionary, we initialize it
