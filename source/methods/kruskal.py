@@ -1,7 +1,8 @@
 
 class Kruskal:
 
-    def find(self, relation, graph, node):
+    @staticmethod
+    def find(relation, graph, node):
         """Find the parent of node passed in parameter
 
         Args:
