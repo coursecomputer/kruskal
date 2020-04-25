@@ -1,19 +1,19 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Kruskal
-[EN] Implementation of Kruskal's algorithm
+<strong>[EN]</strong>  
+Implementation of Kruskal's algorithm
 
-[FR] Implémentation de l'algorithme de Kruskal
+Kruskal is an algorithm that looks for the minimum weight coverage tree in a graph.
+
+<strong>[FR]</strong>  
+Implémentation de l'algorithme de Kruskal
+
+Kruskal est un algorithme qui recherche l'arbre couvrant de poids minimum dans un graphe.
 
 ## Explanation
 * [English](./documentation/explanation.en.md)
 * [Français](./documentation/explanation.fr.md)
-
-## Summary
-- [Pre-requisites](#pre-requisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Explication](#explication)
 
 ## Pre-requisites
 Before starting, please make sure you have installed:
