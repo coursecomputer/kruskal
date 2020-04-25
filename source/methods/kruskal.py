@@ -60,7 +60,7 @@ class Kruskal:
             graph[node_src] += graph[node_dst]
             graph[node_dst] = node_src
 
-    def isCycle(self, relation, graph, src, dst):
+    def is_cycle(self, relation, graph, src, dst):
         """Checks if there's a cycle
 
         Args:
@@ -88,25 +88,25 @@ class Kruskal:
         # retrieves all edges of graph
         edges = self.edges()
         # retrieves the numbers of nodes
-        numOfNodes = self.number_of_nodes()
+        num_of_nodes = self.number_of_nodes()
         # dictionary that storage data node to index graph / ex: { "A": 0, "B": 1 }
         relation = dict()
         # final list that storage the edges of minimal spanning tree
         mst = list()
 
         # graph initialization
-        graph = [-1 for i in range(numOfNodes + 1)]
+        graph = [-1 for i in range(num_of_nodes + 1)]
 
         # sort the edges in order of weights
         edges.sort(key=lambda tup: tup[2])
 
         for edge in edges:
-            if not self.isCycle(relation, graph, edge[0], edge[1]):
+            if not self.is_cycle(relation, graph, edge[0], edge[1]):
                 self.union(relation, graph, edge[0], edge[1])
                 mst.append(edge)
 
                 # whether all the nodes are processed, we get out
-                if len(mst) == (numOfNodes - 1):
+                if len(mst) == (num_of_nodes - 1):
                     break
 
         return mst

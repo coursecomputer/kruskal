@@ -26,6 +26,12 @@ git clone https://github.com/coursecomputer/kruskal.git
 ```
 
 ## Usage
+CLI:
+```bash
+python3 -m unittest discover
+```
+
+CODE:
 ```python
 from source.graph import Graph
 

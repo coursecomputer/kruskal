@@ -56,8 +56,8 @@ class TestKruskal(unittest.TestCase):
     def test_load_with_1000000_edegs_1000_nodes(self):
         # defines random function
         def randomStringDigits(stringLength=6):
-            lettersAndDigits = string.ascii_letters + string.digits
-            return "".join(random.choice(lettersAndDigits) for i in range(stringLength))
+            letters_and_digits = string.ascii_letters + string.digits
+            return "".join(random.choice(letters_and_digits) for i in range(stringLength))
 
         data_graph = dict()
 
@@ -79,7 +79,3 @@ class TestKruskal(unittest.TestCase):
         edges = graph.kruskal()
 
         self.assertEqual(len(edges), graph.number_of_nodes() - 1)
-
-
-if __name__ == "__main__":
-    unittest.main()
