@@ -28,8 +28,8 @@ class Graph(Kruskal):
         edges = list()
 
         for node in self.graph:
-            for neighbourNode in self.graph[node]:
-                edges.append(tuple([node, neighbourNode, self.graph[node][neighbourNode]]))
+            for neighbour_node in self.graph[node]:
+                edges.append(tuple([node, neighbour_node, self.graph[node][neighbour_node]]))
 
         return edges
 
