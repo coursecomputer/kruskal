@@ -13,12 +13,6 @@ Kruskal est un algorithme qui recherche l'arbre couvrant de poids minimum dans u
 * [English](./documentation/explanation.en.md)
 * [Français](./documentation/explanation.fr.md)
 
-## Summary
-- [Pre-requisites](#pre-requisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Explication](#explication)
-
 ## Pre-requisites
 Before starting, please make sure you have installed:
 - python [v3](https://www.python.org/)
