@@ -100,44 +100,37 @@ Result = []
       
       [A] and [C] are in different sets.
       ```
-
-
-      If the 2 sets are different, it means that there is no cycle, so they be will merge. (`UNION`)
-
-         ```
-         Before state:
-         [A] [B] [C] [D] [E] [F]
-         
-         After state:
-         [A, C] [B] [D] [E] [F]
-         ```
-
-         
-
-      2. After merging the sets, the edge is stored in the `Result' variable:
-
-         ```
-         Result = [
-           ...
-           A <=[4]=> C
-         ]
-         ```
-
+      
+   2. If the 2 sets are different, it means that there is no cycle, so they be will merge. (`UNION`)
    
-
-   1. Bis. 
-
+      ```
+      Before state:
+      [A] [B] [C] [D] [E] [F]
+      
+      After state:
+      [A, C] [B] [D] [E] [F]
+      ```
+   
+   3. After merging the sets, the edge is stored in the `Result` variable:
+   
+      ```
+      Result = [
+        ...
+        A <=[4]=> C
+      ]   
+      ```
+   
+   1. 1.Bis.
+    
       ```
       A <=[11]=> D
-      
+     
       Current state:
       [A, C, B, D] [E] [F]
-      
+     
       [A, C, B, D] are in the same set, so we don't merge to avoid a cycle.
       ```
-
-      
-
+   
 4. Finally, we return the variable `Result` which contains all the edges of the tree covering minimum
 
    ```
@@ -298,7 +291,7 @@ E = -2 becomes E = 0 (index of A)
 
  #### Path compression
 
-Path compression is done at `FIND-SET' is not at `UNION', and is not done all at once.
+Path compression is done at `FIND-SET` is not at `UNION`, and is not done all at once.
 
 
 Here is an example with the same 2 `FIND-SET`:
@@ -311,7 +304,7 @@ find(D) = 0
 arr[index(D)] => arr[index(B)] => arr[index(A)]
 ```
 
-The algorithm is traced back to the root of the `set' which is the `0' index.
+The algorithm is traced back to the root of the `set` which is the `0` index.
 
 We check if the parent of D is `positive`. (If it is negative, it has no parent, it is itself the parent).
 And we check if the parent of D (`1`) is different from the root index of the `set` (`0`).
@@ -348,7 +341,7 @@ One less hit.
 
 As we have seen above, 'rank' is used to optimize mergers.
 
-By merging from the smallest `set' to the largest, less work is given to `path compression' and more paths are `1 hit' from the parent of the `set'.
+By merging from the smallest `set` to the largest, less work is given to `path compression` and more paths are `1 hit` from the parent of the `set'.
 
 The array method implements this by default.
 
@@ -367,7 +360,7 @@ sinon
 
 
 
-This example shows the optimized method and the non-optimized method.
+This example shows the optimized method and the non-optimized method.g
 
 <p align="left">
     <img src="./assets/rank2.png" width="1000" alt="">

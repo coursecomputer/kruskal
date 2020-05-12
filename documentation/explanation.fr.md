@@ -111,31 +111,26 @@ Resultat = []
       [A] et [C] sont dans des ensembles différents
       ```
 
+   2. Si les 2 ensembles sont différents, c'est qu'il n'y a pas de cycle alors on les fusionne. (`UNION`)
 
-      1. Si les 2 ensembles sont différents, c'est qu'il n'y a pas de cycle alors on les fusionne. (`UNION`)
+      ```
+      État avant:
+      [A] [B] [C] [D] [E] [F]
+      
+      État après:
+      [A, C] [B] [D] [E] [F]
+      ```
 
-         ```
-         État avant:
-         [A] [B] [C] [D] [E] [F]
-         
-         État après:
-         [A, C] [B] [D] [E] [F]
-         ```
+   3. Après avoir fusionné les ensembles, on stocke l'arête dans la variable `Resultat`:
 
-         
+      ```
+      Resultat = [
+        ...
+        A <=[4]=> C
+      ]
+      ```
 
-      2. Après avoir fusionné les ensembles, on stocke l'arête dans la variable `Resultat`:
-
-         ```
-         Resultat = [
-           ...
-           A <=[4]=> C
-         ]
-         ```
-
-   
-
-   1. Bis. 
+   1. 1.Bis. 
 
       ```
       A <=[11]=> D
@@ -145,8 +140,6 @@ Resultat = []
       
       [A, C, B, D] sont dans le même ensemble alors on ne fusionne pas pour éviter un cycle
       ```
-
-      
 
 4. Finalement, on retourne la variable `Resultat` qui contient toutes les arêtes de l'arbre couvrant minimal
 
