@@ -15,7 +15,8 @@ l'algorithme de kruskal s'applique au graphe connexe non-orienté et pondéré
 </ul>
 
 
-Un [arbre](https://fr.wikipedia.org/wiki/Arbre_(th%C3%A9orie_des_graphes)) est un graphe sans cycle et l'une des principales  fonctionnalités de cet algorithme est de trouver les cycles entre nœuds déjà traités.
+Un [arbre](https://fr.wikipedia.org/wiki/Arbre_(th%C3%A9orie_des_graphes)) est un graphe sans cycle  
+L'une des principales fonctionnalités de l'algorithme de Kruskal est de trouver les cycles entre nœuds déjà traités.
 
 
 <p align="left">
